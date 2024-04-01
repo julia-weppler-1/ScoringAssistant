@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-%4=h!d)uk%77ni!+r)yukrq7d1^3m!ze%@)c&wrbbo+5&s+22(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://scoring-assistant-f3b2293a68ff.herokuapp.com/']
 
 
 # Application definition
