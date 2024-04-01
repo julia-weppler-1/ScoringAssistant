@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Excel</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Excel File</h2>
+        <h2>Step 1: Download template</h2>
+        <p>Fill in the downloaded template with gymnasts' names, levels, and scores. Use the format of the downloaded template. This program expects a specific layout for the Excel input file.</p>
+        <!-- Button for downloading the Excel template file -->
+        <form action="{% url 'download_template' %}" method="get">
+            {% csrf_token %}
+            <button type="submit">Download Excel Template</button>
+        </form>
+        <h2>Step 2: Save and upload</h2>
+        <p>Save the edited file template and upload it using the "Choose File" button. Make sure you are uploading the correct .xlsx file. The file MUST end in .xlsx format.</p>
+        <h2>Step 3: Complete upload</h2>
+        <p>After choosing the correct file, click the "Upload" button. This will automatically run the scoring program, and a results text file will automatically be downloaded to your device's "Downloads" folder.</p>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
